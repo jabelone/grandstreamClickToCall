@@ -1,0 +1,42 @@
+<!doctype html>
+
+<html>
+  <head>
+    <title>Grandstream Click To Call</title>
+    <script src="popup.js"></script> <!-- Load our JS -->
+    <link rel="stylesheet" href="stylesheet.css"> <!-- Load our css -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> <!-- load our font -->
+  </head>
+
+  <header>
+    <H3>Grandstream Click To Call</H3>
+  </header>
+
+  <body>
+    <div id="status">
+      <h4 id="phone_details_title">Please Wait...</h4>
+      <p id="phone_details_ip"></p>
+      <p id="phone_details_status"></p>
+    </div>
+
+    <div id="phone_actions">
+        <p>Phone Actions</p>
+        <input value="Accept Call" id="phone_actions_acceptcall" class="button" type="submit">
+        <input value="End Call" id="phone_actions_endcall" class="button" type="submit">
+        <input value="Hold Call" id="phone_actions_holdcall" class="button" type="submit">
+        <input value="Reboot" id="phone_actions_reboot" class="button" type="submit">
+    </div>
+
+    <div id="type_to_dial">
+      <p id="type_to_dial_title">Enter a number to dial</p>
+      <input title="Enter a number to dial" id="type_to_dial_number" type="phone" name="type_to_dial_number">
+      <input value="Dial" id="type_to_dial_submit" class="button" type="submit" name="type_to_dial_submit">
+    </div>
+  </body>
+
+  <footer>
+    <p id="copyright">&copy; 2017 <a href="https://github.com/jabelone">Jaimyn Mayer</a></p>
+  </footer>
+
+</html>
+

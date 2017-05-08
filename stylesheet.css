@@ -1,0 +1,47 @@
+body, a {
+    font-size: 100%;
+    background-color: #2196F3;
+    color: #FFFFFF;
+    font-family: 'Roboto', 'Segoe UI', sans-serif;
+}
+#status, #status p, #status h4, h3, #type_to_dial_title {
+    padding: 2px;
+    margin: 0;
+    max-width: 50%;
+    min-width: 250px;
+}
+
+#status h4, h3 {
+    margin-bottom: 10px;
+}
+
+#type_to_dial_title {
+    margin-top: 10px;
+}
+
+input {
+    padding: 4px;
+    margin: 0;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-box-shadow: 2px 2px 0 #CCC, 0 -1px #FFF inset;
+    -webkit-box-shadow: 2px 2px 0 #CCC, 0 -1px #FFF inset;
+    box-shadow: 2px 2px 0 #CCC, 0 -1px #FFF inset;
+    background: #F8F8F8;
+    color: #888;
+    border: none;
+    outline: none;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.button:active {
+    background-color: #eeeeee;
+    box-shadow: 2px 1px #CCC;
+    transform: translateY(2px);
+}
+
+#type_to_dial_number {
+    width: 150px;
+}
