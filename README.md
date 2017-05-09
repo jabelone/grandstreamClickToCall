@@ -29,3 +29,14 @@ To activate click to call, simply click on the link and the handset will immedia
 
 ### Starting a Call
 Whenver a call is started, you'll get a chrome notification.  This confirms what number you're calling and lets you quickly cancel the call if it was by mistake.  The notification should hang around for about 10 seconds, but you can dismiss it earlier with the "dismiss" button.
+
+# Planned Features
+- More support for different phone number formats
+- User configurable options (ip, refresh rate etc) from the GUI
+- Option to call selected text when right clicking on a text selection
+
+# License
+This entire project is open source.  It's available under the GNU GPL v3 or later license.  Basically, this means you can use it for whatever you want as long as you release any modifications under the same license.  (and so forth)  See the LICENSE.md file for more info.
+
+# Contributions
+If you want a new feature make an issue and I'll try to get aroud to adding it if it's possible.  If you want to change/add something yourself go for it!  Make a pull request and I'll have a look at and approve/decline any changes.
