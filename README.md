@@ -28,7 +28,7 @@ Currently, the click to call feature only has limited support.  There are too ma
 To activate click to call, simply click on the link and the handset will immediately start a call.
 
 ### Starting a Call
-Whenver a call is started, you'll get a chrome notification.  This confirms what number you're calling and lets you quickly cancel the call if it was by mistake.  The notification should hang around for about 10 seconds, but you can dismiss it earlier with the "dismiss" button.
+Whenever a call is started, you'll get a chrome notification.  This confirms what number you're calling and lets you quickly cancel the call if it was started by mistake.  The notification should hang around for about 10 seconds, but you can dismiss it earlier with the "dismiss" button.
 
 # Planned Features
 - More support for different phone number formats
@@ -39,4 +39,4 @@ Whenver a call is started, you'll get a chrome notification.  This confirms what
 This entire project is open source.  It's available under the GNU GPL v3 or later license.  Basically, this means you can use it for whatever you want as long as you release any modifications under the same license.  (and so forth)  See the LICENSE.md file for more info.
 
 # Contributions
-If you want a new feature make an issue and I'll try to get aroud to adding it if it's possible.  If you want to change/add something yourself go for it!  Make a pull request and I'll have a look at and approve/decline any changes.
+If you want a new feature make an issue and I'll try to get aroud to adding it if it's possible.  If you really want to change/add something yourself go for it!  Make a pull request and I'll have a look at and approve/decline any changes.  Make sure it has been thoroughly tested and your code follows the same style/structure as the project.
