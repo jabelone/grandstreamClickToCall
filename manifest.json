@@ -18,7 +18,7 @@
   ],
 
   "background": {
-  "scripts": ["eventPage.js", "popup.js"],
+  "scripts": ["popup.js"],
   "persistent": false
 },
 
@@ -29,6 +29,9 @@
 
   "permissions": [
     "http://*/",
-    "notifications"
-  ]
+    "notifications",
+    "storage"
+  ],
+
+  "options_page": "options.html"
 }

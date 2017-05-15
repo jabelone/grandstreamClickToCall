@@ -4,7 +4,8 @@ body, a {
     color: #FFFFFF;
     font-family: 'Roboto', 'Segoe UI', sans-serif;
 }
-#status, #status p, #status h4, h3, #type_to_dial_title {
+
+#status, #status p, #status h4, #type_to_dial_title {
     padding: 2px;
     margin: 0;
     max-width: 50%;
@@ -19,7 +20,7 @@ body, a {
     margin-top: 10px;
 }
 
-input {
+input, button {
     padding: 4px;
     margin: 0;
     -moz-border-radius: 5px;
@@ -44,4 +45,16 @@ input {
 
 #type_to_dial_number {
     width: 150px;
+}
+
+#status {
+    padding-bottom: 15px;
+}
+
+#save_ip, #options_copyright, #options_title {
+    text-align: center;
+    width: 100%;
+    max-width: 300px;
+    margin: auto;
+    margin-bottom: 10px;
 }

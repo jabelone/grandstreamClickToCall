@@ -47,6 +47,16 @@ function Handset(ip, protocol, password) {
     };
 
     this.startCall = function (number, account, callback) {
+        var opt = {
+            type: "basic",
+            title: "Dialing Number",
+            message: number,
+            iconUrl: "assets/icons/icon.png",
+            priority: 2,
+            buttons: [{title:"Dismiss"}, {title:"End Call"}]
+        };
+        chrome.notifications.create("", opt);
+
         //Call the handset"s api
         var callUrl = this.protocol + this.ip + this.api_start_call + "?phonenumber=" + number +
             "&account=" + account + "&password=" + this.password;
@@ -72,10 +82,9 @@ function Handset(ip, protocol, password) {
         x.send(); // Send API call
     };
 
-    this.startCallTyped = function (callback) {
+    this.startCallTyped = function () {
         var number_to_dial = document.getElementById("type_to_dial_number").value;
         self.startCall(number_to_dial, "0");
-        if (callback) callback(); //check before calling it.
     };
 
     this.sendOperation = function (operation, sys, callback) {
@@ -104,29 +113,56 @@ function Handset(ip, protocol, password) {
     x.send(); // Send API call
     };
 
-    this.acceptCall = function (callback) {
+    this.notify = function (title, message) {
+        var opt = {
+            type: "basic",
+            title: title,
+            message: message,
+            iconUrl: "assets/icons/icon.png",
+            priority: 2,
+            buttons: [{title:"Dismiss"}]
+        };
+        chrome.notifications.create("", opt);
+    };
+
+    this.acceptCall = function () {
         self.sendOperation("acceptcall");
+        self.notify("Accepted Call", "");
     };
 
-    this.endCall = function (callback) {
+    this.endCall = function () {
         self.sendOperation("endcall");
+        self.notify("Ended Call", "");
     };
 
-    this.holdCall = function (callback) {
+    this.holdCall = function () {
         self.sendOperation("holdcall");
+        self.notify("Toggling Call Hold", "");
     };
 
-    this.rejectCall = function (callback) {
+    this.rejectCall = function () {
         self.sendOperation("rejectcall");
+        self.notify("Rejecting Call", "");
     };
 
-    this.reboot = function (callback) {
+    this.reboot = function () {
         self.sendOperation("REBOOT", 1);
+        self.notify("Rebooting Handset", "");
     };
 
+    this.getIP = function () {
+        chrome.storage.sync.get({
+            ip: '192.168.0.10'
+        }, function(items) {
+            self.ip = items.ip;
+            console.log("Updated IP to: " + items.ip);
+            return items.ip;
+        });
+    }
 }
 
-var phone = new Handset("192.168.0.23", "http://", "admin");
+var phone = new Handset("10.0.2.30", "http://", "admin");
+phone.getIP();
 
 console.log("IP: " + phone.protocol + phone.ip + " password: " + phone.password);
 
@@ -143,32 +179,19 @@ document.addEventListener("DOMContentLoaded", function () {
     window.setInterval(function () {
         phone.getStatus(phone.updateStatus)
     }, phone.update_delay);
-
-    // Open my GitHub in new page when copyright link is clicked
-    document.getElementById("copyright").addEventListener("click", function (activeTab) {
-        var newURL = "https://github.com/jabelone/";
-        chrome.tabs.create({url: newURL});
-    }, false);
 });
 
 chrome.runtime.onMessage.addListener(function (message) {
-    var opt = {
-        type: "basic",
-        title: "Dialing Number",
-        message: message,
-        iconUrl: "assets/icons/icon.png",
-        priority: 2,
-        buttons: [{title:"End Call"}, {title:"Dismiss"}]
-    };
-    chrome.notifications.create("", opt);
     console.log("number received: " + message);
     phone.startCall(message, "0");
 });
 
 chrome.notifications.onButtonClicked.addListener(function(notificationId, buttonIndex) {
-    if (buttonIndex === 1) chrome.notifications.clear(notificationId);
-    else if (buttonIndex === 0) {
+    if (buttonIndex === 1) {
+        chrome.notifications.clear(notificationId);
         phone.endCall();
+    }
+    else {
         chrome.notifications.clear(notificationId);
     }
 });

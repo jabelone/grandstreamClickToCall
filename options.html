@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+<head>
+    <title>GS CTC Options</title>
+    <script src="options.js"></script> <!-- Load our JS -->
+    <link rel="stylesheet" href="stylesheet.css"> <!-- Load our css -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> <!-- load our font -->
+</head>
+
+<header>
+    <div id="options_title">
+        <h3>Grandstream Click To Call Options</h3>
+    </div>
+</header>
+
+<body>
+
+<div id="save_ip">
+    <p id="ip_title">Enter an IP address and click the button to save it.</p>
+    <p id="saved"></p>
+    <form onsubmit="return false">
+        <input title="Enter an IP address" id="ip_input" type="text" name="ip_input">
+        <button id="ip_submit" class="button" type="button">Save</button>
+    </form>
+</div>
+</body>
+
+<footer>
+    <p id="options_copyright"  class="copyright">&copy; 2017 <a target="_blank" href="https://github.com/jabelone">Jaimyn Mayer</a></p>
+</footer>
+</html>
