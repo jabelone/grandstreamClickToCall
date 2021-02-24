@@ -16,10 +16,20 @@
 <body>
 
 <div id="save_ip">
-    <p id="ip_title">Enter an IP address and click the button to save it.</p>
+        <p id="ip_title">Enter an IP address and click the button to save it.</p>
     <p id="saved"></p>
     <form onsubmit="return false">
-        <input title="Enter an IP address" id="ip_input" type="text" name="ip_input">
+        <p>IP Address:<input title="Enter an IP address" id="ip_input" type="text" name="ip_input"></p>
+        
+    <p>Protocol: <select title="Select Protocol" id="prot_input" type="select" name="prot_input">
+					<option name="http" value="http://">http://</option>
+					<option name="https" value="https://">https://</option>
+        </select></p>
+    <p>Scrape Page:<select title="scrape" id="scrape" type="select" name="scrape">
+					<option name="no" value="no">No</option>
+					<option name="yes" value="yes">Yes</option>
+        </select></p>
+    <p>Prefix: <input title="prefix" id="prefix" type="text" name="prefix" value=""> </p>
         <button id="ip_submit" class="button" type="button">Save</button>
     </form>
 </div>
