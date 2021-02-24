@@ -194,8 +194,7 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("phone_actions_acceptcall").addEventListener("click", phone.acceptCall, false);
     document.getElementById("phone_actions_endcall").addEventListener("click", phone.endCall, false);
     document.getElementById("phone_actions_holdcall").addEventListener("click", phone.holdCall, false);
-	//Commented out the Reboot button, and listener because it does not seem necessary <Q5>
-    //document.getElementById("phone_actions_reboot").addEventListener("click", phone.reboot, false);
+    document.getElementById("phone_actions_reboot").addEventListener("click", phone.reboot, false);
 
     // Get phone status every x seconds
     phone.getStatus(phone.updateStatus);
