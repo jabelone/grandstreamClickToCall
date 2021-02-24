@@ -13,7 +13,7 @@
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
-      "js": ["find_numbers.js"]
+      "js": ["jquery-2.2.0.min.js","find_numbers.js"]
     }
   ],
 
